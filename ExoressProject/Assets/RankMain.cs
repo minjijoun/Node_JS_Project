@@ -71,18 +71,18 @@ public class RankMain : MonoBehaviour
     private IEnumerator PostScore(string url, string json, System.Action<string> callback)
     {
         var webRequest = new UnityWebRequest(url, "POST");
-        var bodyRaw = Encoding.UTF8.GetBytes(json);                         //직렬화 (문자열 -> 바이트 배열)
+        var bodyRaw = Encoding.UTF8.GetBytes(json);                         
 
         webRequest.uploadHandler = new UploadHandlerRaw(bodyRaw);
         webRequest.downloadHandler = new DownloadHandlerBuffer();
         webRequest.SetRequestHeader("Contect-Type", "application/json");
 
-        yield return webRequest.SendWebRequest();                           //Node.js로 req 전송
+        yield return webRequest.SendWebRequest();                          
 
         if (webRequest.result == UnityWebRequest.Result.ConnectionError ||
            webRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.Log("네트워크가 너무 구립니다");
+            Debug.Log("네트워크가 오류 ");
         }
         else
         {
@@ -101,7 +101,7 @@ public class RankMain : MonoBehaviour
         if (webRequest.result == UnityWebRequest.Result.ConnectionError ||
             webRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.Log("네트워크가 너무 구려서 id도 못 가져오겠습니다");
+            Debug.Log("네트워크가 오류 아이디를 가지고 올 수 없음");
         }
         else
         {
@@ -119,7 +119,7 @@ public class RankMain : MonoBehaviour
         if (webRequest.result == UnityWebRequest.Result.ConnectionError ||
             webRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.Log("네트워크가 너무 구려서 id도 못 가져오겠습니다");
+            Debug.Log("네트워크가 오류 아이디를 가지고 올 수 없음");
         }
         else
         {
