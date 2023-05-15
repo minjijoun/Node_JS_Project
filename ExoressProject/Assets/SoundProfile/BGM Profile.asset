@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab92394fe0835049a53d044e3f4f25b, type: 3}
   m_Name: BGM Profile
   m_EditorClassIdentifier: 
-  audioType: 0
+  audioType: 2
   randomClipList:
   - {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
   - {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
